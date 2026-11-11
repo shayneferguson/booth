@@ -1,0 +1,582 @@
+{
+  "source": "https://www.figma.com/design/T9CJP6i0nQio9tP0rRyZ7D/sound-icons2",
+  "variant": "Line / Regular",
+  "icons": [
+    {
+      "name": "play",
+      "file": "play.svg",
+      "node": "35269:73399",
+      "width": "24",
+      "height": "24",
+      "bytes": 471
+    },
+    {
+      "name": "pause",
+      "file": "pause.svg",
+      "node": "35269:73289",
+      "width": "24",
+      "height": "24",
+      "bytes": 544
+    },
+    {
+      "name": "stop",
+      "file": "stop.svg",
+      "node": "35269:74331",
+      "width": "24",
+      "height": "24",
+      "bytes": 423
+    },
+    {
+      "name": "skip-back",
+      "file": "skip-back.svg",
+      "node": "35269:74157",
+      "width": "24",
+      "height": "24",
+      "bytes": 472
+    },
+    {
+      "name": "skip-forward",
+      "file": "skip-forward.svg",
+      "node": "35269:74215",
+      "width": "24",
+      "height": "24",
+      "bytes": 470
+    },
+    {
+      "name": "loop",
+      "file": "loop.svg",
+      "node": "35269:72947",
+      "width": "24",
+      "height": "24",
+      "bytes": 443
+    },
+    {
+      "name": "waveform",
+      "file": "waveform.svg",
+      "node": "35269:74896",
+      "width": "24",
+      "height": "24",
+      "bytes": 348
+    },
+    {
+      "name": "equalizer",
+      "file": "equalizer.svg",
+      "node": "35269:72440",
+      "width": "24",
+      "height": "24",
+      "bytes": 403
+    },
+    {
+      "name": "headphones",
+      "file": "headphones.svg",
+      "node": "35269:72660",
+      "width": "24",
+      "height": "24",
+      "bytes": 617
+    },
+    {
+      "name": "microphone",
+      "file": "microphone.svg",
+      "node": "35269:73005",
+      "width": "24",
+      "height": "24",
+      "bytes": 503
+    },
+    {
+      "name": "microphone-off",
+      "file": "microphone-off.svg",
+      "node": "35269:73063",
+      "width": "24",
+      "height": "24",
+      "bytes": 622
+    },
+    {
+      "name": "music-note",
+      "file": "music-note.svg",
+      "node": "35269:73121",
+      "width": "24",
+      "height": "24",
+      "bytes": 469
+    },
+    {
+      "name": "playlist",
+      "file": "playlist.svg",
+      "node": "35269:73509",
+      "width": "24",
+      "height": "24",
+      "bytes": 455
+    },
+    {
+      "name": "volume-off",
+      "file": "volume-off.svg",
+      "node": "35269:74780",
+      "width": "24",
+      "height": "24",
+      "bytes": 516
+    },
+    {
+      "name": "volume-high",
+      "file": "volume-high.svg",
+      "node": "35269:74606",
+      "width": "24",
+      "height": "24",
+      "bytes": 596
+    },
+    {
+      "name": "keyframes",
+      "file": "keyframes.svg",
+      "node": "35269:72889",
+      "width": "24",
+      "height": "24",
+      "bytes": 600
+    },
+    {
+      "name": "book-open",
+      "file": "book-open.svg",
+      "node": "35269:71985",
+      "width": "24",
+      "height": "24",
+      "bytes": 571
+    },
+    {
+      "name": "chapters",
+      "file": "chapters.svg",
+      "node": "35314:29533",
+      "width": "24",
+      "height": "24",
+      "bytes": 476
+    },
+    {
+      "name": "circle",
+      "file": "circle.svg",
+      "node": "35269:38763",
+      "width": "24",
+      "height": "24",
+      "bytes": 418
+    },
+    {
+      "name": "check",
+      "file": "check.svg",
+      "node": "35269:38616",
+      "width": "24",
+      "height": "24",
+      "bytes": 321
+    },
+    {
+      "name": "close",
+      "file": "close.svg",
+      "node": "35269:40000",
+      "width": "24",
+      "height": "24",
+      "bytes": 349
+    },
+    {
+      "name": "plus",
+      "file": "plus.svg",
+      "node": "35269:41668",
+      "width": "24",
+      "height": "24",
+      "bytes": 338
+    },
+    {
+      "name": "minus",
+      "file": "minus.svg",
+      "node": "35269:41161",
+      "width": "24",
+      "height": "24",
+      "bytes": 313
+    },
+    {
+      "name": "circle-help",
+      "file": "circle-help.svg",
+      "node": "35269:39258",
+      "width": "24",
+      "height": "24",
+      "bytes": 520
+    },
+    {
+      "name": "circle-info",
+      "file": "circle-info.svg",
+      "node": "35269:39316",
+      "width": "24",
+      "height": "24",
+      "bytes": 443
+    },
+    {
+      "name": "menu",
+      "file": "menu.svg",
+      "node": "35269:57101",
+      "width": "24",
+      "height": "24",
+      "bytes": 328
+    },
+    {
+      "name": "more-horizontal",
+      "file": "more-horizontal.svg",
+      "node": "35269:57744",
+      "width": "24",
+      "height": "24",
+      "bytes": 664
+    },
+    {
+      "name": "grid",
+      "file": "grid.svg",
+      "node": "35269:56252",
+      "width": "24",
+      "height": "24",
+      "bytes": 797
+    },
+    {
+      "name": "settings",
+      "file": "settings.svg",
+      "node": "35269:58935",
+      "width": "24",
+      "height": "24",
+      "bytes": 2967
+    },
+    {
+      "name": "trash",
+      "file": "trash.svg",
+      "node": "35269:59726",
+      "width": "24",
+      "height": "24",
+      "bytes": 469
+    },
+    {
+      "name": "zoom-in",
+      "file": "zoom-in.svg",
+      "node": "35269:60804",
+      "width": "24",
+      "height": "24",
+      "bytes": 462
+    },
+    {
+      "name": "zoom-out",
+      "file": "zoom-out.svg",
+      "node": "35269:60862",
+      "width": "24",
+      "height": "24",
+      "bytes": 437
+    },
+    {
+      "name": "search",
+      "file": "search.svg",
+      "node": "35269:58877",
+      "width": "24",
+      "height": "24",
+      "bytes": 427
+    },
+    {
+      "name": "filter",
+      "file": "filter.svg",
+      "node": "35269:56087",
+      "width": "24",
+      "height": "24",
+      "bytes": 395
+    },
+    {
+      "name": "link",
+      "file": "link.svg",
+      "node": "35269:56594",
+      "width": "24",
+      "height": "24",
+      "bytes": 497
+    },
+    {
+      "name": "link-break",
+      "file": "link-break.svg",
+      "node": "35269:56649",
+      "width": "24",
+      "height": "24",
+      "bytes": 523
+    },
+    {
+      "name": "panel-left",
+      "file": "panel-left.svg",
+      "node": "35269:58077",
+      "width": "24",
+      "height": "24",
+      "bytes": 445
+    },
+    {
+      "name": "undo",
+      "file": "undo.svg",
+      "node": "35269:38310",
+      "width": "24",
+      "height": "24",
+      "bytes": 573
+    },
+    {
+      "name": "redo",
+      "file": "redo.svg",
+      "node": "35269:36608",
+      "width": "24",
+      "height": "24",
+      "bytes": 576
+    },
+    {
+      "name": "history",
+      "file": "history.svg",
+      "node": "35269:36140",
+      "width": "24",
+      "height": "24",
+      "bytes": 585
+    },
+    {
+      "name": "download",
+      "file": "download.svg",
+      "node": "35269:35712",
+      "width": "24",
+      "height": "24",
+      "bytes": 341
+    },
+    {
+      "name": "upload",
+      "file": "upload.svg",
+      "node": "35269:38561",
+      "width": "24",
+      "height": "24",
+      "bytes": 336
+    },
+    {
+      "name": "expand",
+      "file": "expand.svg",
+      "node": "35269:35825",
+      "width": "24",
+      "height": "24",
+      "bytes": 328
+    },
+    {
+      "name": "move",
+      "file": "move.svg",
+      "node": "35269:36363",
+      "width": "24",
+      "height": "24",
+      "bytes": 400
+    },
+    {
+      "name": "move-horizontal",
+      "file": "move-horizontal.svg",
+      "node": "35269:36510",
+      "width": "24",
+      "height": "24",
+      "bytes": 354
+    },
+    {
+      "name": "chevron-left",
+      "file": "chevron-left.svg",
+      "node": "35269:34178",
+      "width": "24",
+      "height": "24",
+      "bytes": 329
+    },
+    {
+      "name": "chevron-right",
+      "file": "chevron-right.svg",
+      "node": "35269:34380",
+      "width": "24",
+      "height": "24",
+      "bytes": 330
+    },
+    {
+      "name": "chevron-up",
+      "file": "chevron-up.svg",
+      "node": "35269:34582",
+      "width": "24",
+      "height": "24",
+      "bytes": 327
+    },
+    {
+      "name": "chevron-down",
+      "file": "chevron-down.svg",
+      "node": "35269:33976",
+      "width": "24",
+      "height": "24",
+      "bytes": 329
+    },
+    {
+      "name": "external-link",
+      "file": "external-link.svg",
+      "node": "35269:35874",
+      "width": "24",
+      "height": "24",
+      "bytes": 428
+    },
+    {
+      "name": "repeat",
+      "file": "repeat.svg",
+      "node": "35269:36773",
+      "width": "24",
+      "height": "24",
+      "bytes": 409
+    },
+    {
+      "name": "save",
+      "file": "save.svg",
+      "node": "35269:48767",
+      "width": "24",
+      "height": "24",
+      "bytes": 553
+    },
+    {
+      "name": "folder-open",
+      "file": "folder-open.svg",
+      "node": "35269:47146",
+      "width": "24",
+      "height": "24",
+      "bytes": 532
+    },
+    {
+      "name": "folder-plus",
+      "file": "folder-plus.svg",
+      "node": "35269:47204",
+      "width": "24",
+      "height": "24",
+      "bytes": 473
+    },
+    {
+      "name": "note-edit",
+      "file": "note-edit.svg",
+      "node": "35269:47955",
+      "width": "24",
+      "height": "24",
+      "bytes": 453
+    },
+    {
+      "name": "note-plus-corner",
+      "file": "note-plus-corner.svg",
+      "node": "35269:48129",
+      "width": "24",
+      "height": "24",
+      "bytes": 441
+    },
+    {
+      "name": "copy",
+      "file": "copy.svg",
+      "node": "35269:49561",
+      "width": "24",
+      "height": "24",
+      "bytes": 458
+    },
+    {
+      "name": "scissors",
+      "file": "scissors.svg",
+      "node": "35269:52504",
+      "width": "24",
+      "height": "24",
+      "bytes": 765
+    },
+    {
+      "name": "list-checklist",
+      "file": "list-checklist.svg",
+      "node": "35269:50988",
+      "width": "24",
+      "height": "24",
+      "bytes": 381
+    },
+    {
+      "name": "list-plus",
+      "file": "list-plus.svg",
+      "node": "35269:51263",
+      "width": "24",
+      "height": "24",
+      "bytes": 367
+    },
+    {
+      "name": "list-filter",
+      "file": "list-filter.svg",
+      "node": "35269:51098",
+      "width": "24",
+      "height": "24",
+      "bytes": 334
+    },
+    {
+      "name": "flip-horizontal",
+      "file": "flip-horizontal.svg",
+      "node": "35269:54438",
+      "width": "24",
+      "height": "24",
+      "bytes": 581
+    },
+    {
+      "name": "crop",
+      "file": "crop.svg",
+      "node": "35269:54209",
+      "width": "24",
+      "height": "24",
+      "bytes": 408
+    },
+    {
+      "name": "rotate-left",
+      "file": "rotate-left.svg",
+      "node": "35269:55250",
+      "width": "24",
+      "height": "24",
+      "bytes": 457
+    },
+    {
+      "name": "heart",
+      "file": "heart.svg",
+      "node": "35269:66978",
+      "width": "24",
+      "height": "24",
+      "bytes": 381
+    },
+    {
+      "name": "star",
+      "file": "star.svg",
+      "node": "35269:68050",
+      "width": "24",
+      "height": "24",
+      "bytes": 371
+    },
+    {
+      "name": "users",
+      "file": "users.svg",
+      "node": "35269:69491",
+      "width": "24",
+      "height": "24",
+      "bytes": 563
+    },
+    {
+      "name": "sparkles",
+      "file": "sparkles.svg",
+      "node": "35269:96905",
+      "width": "24",
+      "height": "24",
+      "bytes": 463
+    },
+    {
+      "name": "power",
+      "file": "power.svg",
+      "node": "35269:62364",
+      "width": "24",
+      "height": "24",
+      "bytes": 428
+    },
+    {
+      "name": "pin",
+      "file": "pin.svg",
+      "node": "35269:55134",
+      "width": "24",
+      "height": "24",
+      "bytes": 579
+    },
+    {
+      "name": "palette",
+      "file": "palette.svg",
+      "node": "35269:54960",
+      "width": "24",
+      "height": "24",
+      "bytes": 525
+    },
+    {
+      "name": "heart-filled",
+      "file": "heart-filled.svg",
+      "derived_from": "heart.svg",
+      "treatment": "same original heart path with solid fill for selected favorites",
+      "width": "24",
+      "height": "24"
+    }
+  ]
+}
