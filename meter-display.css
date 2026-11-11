@@ -1,0 +1,32 @@
+/* A fixed dBFS scale, independent of the adjacent fader's gain range. */
+.booth-touch-layout .level-meter{position:relative;align-self:stretch;flex:0 0 40px;min-width:40px;margin:5px 0 0;color:#96a8b2;contain:layout paint;container-type:size}
+.booth-touch-layout .level-meter-body{position:absolute;inset:4px 0 21px;min-height:12px}
+.booth-touch-layout .level-meter-pair{height:100%;display:flex;gap:3px;width:17px}
+.booth-touch-layout .level-meter-rail{position:relative;height:100%;width:7px;border-radius:1px;background:linear-gradient(to top,#668c83 0%,#92bca0 60%,#b6c99b 79.9%,#d5bb7a 80%,#dfb573 94.9%,#d68e79 95%,#df826f 100%);box-shadow:0 0 0 1px #10191f;isolation:isolate}
+.booth-touch-layout .level-meter-rail::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to top,transparent 0,transparent 3px,#15202980 3px,#15202980 4px);pointer-events:none;z-index:2}
+.booth-touch-layout .level-meter-cover{position:absolute;inset:0;background:#111b21;transform-origin:top;transform:scaleY(1);z-index:1}
+.booth-touch-layout .level-meter-peak{position:absolute;inset:0;z-index:3;opacity:0;pointer-events:none}
+.booth-touch-layout .level-meter-peak::after{content:"";position:absolute;bottom:0;left:-1px;right:-1px;height:2px;border-radius:1px;background:#e2e6ce;box-shadow:0 0 3px #d6dfb340}
+.booth-touch-layout .level-meter-clip{position:absolute;left:0;right:0;top:-4px;height:2px;border-radius:1px;background:#48524f;z-index:4}
+.booth-touch-layout .level-meter-rail.is-over .level-meter-clip{background:#ed8c77;box-shadow:0 0 4px #ed8c7755}
+.booth-touch-layout .level-meter-side{position:absolute;top:calc(100% + 3px);left:0;width:100%;text-align:center;font:500 6px/1 Inter,sans-serif;color:#80949f}
+.booth-touch-layout .level-meter-scale{position:absolute;left:21px;top:0;bottom:0;right:0;font:450 8px/1 Inter,sans-serif;font-variant-numeric:tabular-nums;color:#8fa1ab}
+.booth-touch-layout .level-meter-scale span{position:absolute;left:0;transform:translateY(-50%)}
+.booth-touch-layout .level-meter-reading{position:absolute;bottom:0;left:0;right:0;min-height:11px;font:550 8px/11px Inter,sans-serif;font-variant-numeric:tabular-nums;text-align:left;color:#b6cbb9;white-space:nowrap}
+.booth-touch-layout .level-meter-reading.is-over{color:#f0a18b}
+
+.booth-touch-layout .level-meter-reading{display:none}
+.booth-touch-layout .level-meter-body{bottom:10px}
+.booth-touch-layout .strip-scale{display:none}
+.booth-touch-layout .channel-strip{grid-template-columns:94px minmax(0,1fr)}
+.booth-touch-layout.tablet-layout .channel-strip{grid-template-columns:100px minmax(0,1fr)}
+.booth-touch-layout .strip-fader{gap:5px}
+.booth-touch-layout .strip-meter-value.is-over{color:#f0a18b}
+@media(max-width:600px){
+.booth-touch-layout .channel-strip{grid-template-columns:56px minmax(0,1fr)}
+.booth-touch-layout .level-meter{min-width:17px;flex-basis:17px}
+.booth-touch-layout .level-meter-scale{display:none}
+.booth-touch-layout .strip-fader{gap:3px;padding-left:2px;padding-right:2px}
+.booth-touch-layout .strip-fader input{width:28px}
+}
+@container (max-height:85px){.booth-touch-layout .level-meter-scale span:not(:first-child):not(:last-child){display:none}}

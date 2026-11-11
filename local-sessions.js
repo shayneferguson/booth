@@ -1,0 +1,7 @@
+// Separate database: leaves existing invitation takes and schema untouched.
+const opening=new Promise((resolve,reject)=>{const r=indexedDB.open('booth-local-sessions-v1',1);r.onupgradeneeded=()=>r.result.createObjectStore('sessions',{keyPath:'id'});r.onsuccess=()=>resolve(r.result);r.onerror=()=>reject(r.error);});
+async function run(mode,fn){const d=await opening;return new Promise((resolve,reject)=>{const tx=d.transaction('sessions',mode),r=fn(tx.objectStore('sessions'));tx.oncomplete=()=>resolve(r.result);tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Session could not be saved.'));});}
+export const all=()=>run('readonly',s=>s.getAll());
+export const get=id=>run('readonly',s=>s.get(id));
+export const put=s=>run('readwrite',o=>o.put(s));
+export function validateSession(s){if(!s||!/^local-[a-f0-9]{32}$/.test(s.id)||typeof s.name!=='string'||!Number.isFinite(s.duration)||s.duration<.1||s.duration>1200||!Number.isFinite(s.bpm)||s.bpm<20||s.bpm>300)throw Error('Invalid session metadata. Use a song up to 20 minutes, 20–300 BPM.');if(!Array.isArray(s.sections)||s.sections.length>128||s.sections.some(x=>typeof x.name!=='string'||!Number.isFinite(x.start)||!Number.isFinite(x.end)||x.start<0||x.end<=x.start||x.end>s.duration+.01))throw Error('Invalid song sections.');return {...s,name:s.name.slice(0,150),artist:String(s.artist||'Artist').slice(0,70),local:true};}

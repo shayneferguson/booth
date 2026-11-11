@@ -1,0 +1,6 @@
+import {NativeDSP,NativeRack} from './native-dsp.js?v=2';
+class BoothVocal extends AudioWorkletProcessor{
+ constructor(options){super();const {wasm,catalog}=options.processorOptions;this.dsp=new NativeDSP(new WebAssembly.Instance(new WebAssembly.Module(wasm),{}).exports,catalog);this.dsp.rate=sampleRate;this.rack=new NativeRack(this.dsp,2);this.left=new Float32Array(128);this.right=new Float32Array(128);this.bypass=false;this.rack.set({eq:{},effects:[]});this.port.onmessage=e=>{try{const m=e.data;if(m.type==='settings'){this.rack.set(m.settings);this.port.postMessage({type:'configured',latency:this.rack.latency});}if(m.type==='bypass')this.bypass=m.value;if(m.type==='reset')this.rack.reset();}catch(error){this.port.postMessage({type:'error',message:error.message});}};this.port.postMessage({type:'ready'});}
+ process(inputs,outputs){const out=outputs[0];if(!out?.length)return true;const n=out[0].length;if(this.left.length!==n){this.left=new Float32Array(n);this.right=new Float32Array(n);}const input=inputs[0];this.left.fill(0);this.right.fill(0);if(input?.[0])this.left.set(input[0]);if(input?.[1])this.right.set(input[1]);else this.right.set(this.left);if(!this.bypass)this.rack.process(this.left,this.right,n);out[0].set(this.left);if(out[1])out[1].set(this.right);return true;}
+}
+registerProcessor('booth-vocal',BoothVocal);

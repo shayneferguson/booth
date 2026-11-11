@@ -1,0 +1,14 @@
+const open=new Promise((resolve,reject)=>{const r=indexedDB.open('booth-takes-v1',2);r.onupgradeneeded=()=>{for(const [name,key] of [['takes','id'],['chunks','key'],['layers','id']])if(!r.result.objectStoreNames.contains(name))r.result.createObjectStore(name,{keyPath:key});};r.onsuccess=()=>{r.result.onversionchange=()=>r.result.close();resolve(r.result);};r.onblocked=()=>reject(Error('Close other Booth tabs, then reload to upgrade vocal tracks.'));r.onerror=()=>reject(r.error);});
+export async function db(store,mode,fn){const d=await open;return new Promise((resolve,reject)=>{const t=d.transaction(store,mode),r=fn(t.objectStore(store));t.oncomplete=()=>resolve(r?.result);t.onerror=()=>reject(t.error);t.onabort=()=>reject(t.error||Error('Device storage is unavailable'));});}
+export const put=t=>db('takes','readwrite',s=>s.put(t));
+export const all=()=>db('takes','readonly',s=>s.getAll());
+export async function remove(t){await db('takes','readwrite',s=>s.delete(t.id));await clearChunks(t.id);}
+export const chunk=(id,index,data)=>db('chunks','readwrite',s=>s.put({key:id+':'+String(index).padStart(6,'0'),id,data}));
+export async function chunks(id){return (await db('chunks','readonly',s=>s.getAll(IDBKeyRange.bound(id+':',id+':~')))).map(c=>c.data);}
+export async function clearChunks(id){const d=await open;return new Promise((resolve,reject)=>{const t=d.transaction('chunks','readwrite'),s=t.objectStore('chunks'),r=s.openCursor();r.onsuccess=()=>{const c=r.result;if(c){if(c.value.id===id)c.delete();c.continue();}};t.oncomplete=resolve;t.onerror=()=>reject(t.error);});}
+export function wav(arrays,rate){const n=arrays.reduce((a,b)=>a+b.length,0),b=new ArrayBuffer(44+n*2),v=new DataView(b),text=(at,s)=>{for(let i=0;i<s.length;i++)v.setUint8(at+i,s.charCodeAt(i));};text(0,'RIFF');v.setUint32(4,36+n*2,true);text(8,'WAVEfmt ');v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,rate,true);v.setUint32(28,rate*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);text(36,'data');v.setUint32(40,n*2,true);let p=44;for(const a of arrays)for(const x of a){v.setInt16(p,Math.round(Math.max(-1,Math.min(1,x))*32767),true);p+=2;}return new Blob([b],{type:'audio/wav'});}
+
+export const putLayer=l=>db('layers','readwrite',s=>s.put(l));
+export const allLayers=()=>db('layers','readonly',s=>s.getAll());
+// A restored backup commits all of its private tracks and takes together.
+export async function restoreBackup(takes,layers){const d=await open;return new Promise((resolve,reject)=>{const tx=d.transaction(['takes','layers'],'readwrite');for(const t of takes)tx.objectStore('takes').put(t);for(const l of layers)tx.objectStore('layers').put(l);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error);tx.onabort=()=>reject(tx.error||Error('Backup could not be saved.'));});}

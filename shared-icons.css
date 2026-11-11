@@ -1,0 +1,127 @@
+/* All glyphs remain at their original Figma 24 × 24 geometry. */
+body.rr-icon-ui button.rr-icon-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+  box-sizing: border-box; width: 44px; min-width: 44px !important; height: 44px; min-height: 44px !important;
+  padding: 9px; font-size: 0 !important; line-height: 0 !important; letter-spacing: 0; flex-shrink: 0;
+  position: relative; -webkit-user-select: none; user-select: none;
+}
+/* Text stays in the DOM for the app's own updates. aria-label carries its name. */
+body.rr-icon-ui button.rr-icon-button > * { display: none !important; }
+body.rr-icon-ui button.rr-icon-button::before {
+  content: ''; display: block; position: static; width: 24px; height: 24px;
+  min-width: 24px; flex: 0 0 24px; border: 0; border-radius: 0;
+  background: currentColor; opacity: 1; transform: none;
+  -webkit-mask: var(--rr-icon) center / 24px 24px no-repeat;
+  mask: var(--rr-icon) center / 24px 24px no-repeat;
+}
+body.rr-icon-ui button.rr-icon-button::after { content: none !important; }
+body.rr-icon-ui button.rr-icon-button[data-rr-value]:not([data-rr-value=""]) { width: auto; }
+
+body.rr-icon-ui button.rr-icon-button:focus-visible { outline: 2px solid #e0c788; outline-offset: -2px; }
+
+#rr-icon-tooltip {
+  position: fixed; z-index: 2147483646; max-width: min(300px,calc(100vw - 16px));
+  padding: 10px 13px; border: 1px solid #59656d; border-radius: 6px;
+  background: #10171c; color: #f1f1ed; font: 500 12px/1.45 Inter,system-ui,sans-serif;
+  pointer-events: none; box-shadow: 0 5px 20px #0009; overflow-wrap: anywhere;
+}
+#rr-icon-tooltip[hidden] { display: none; }
+/* Fixed chrome keeps the existing safe-area reserve. */
+body.daw.rr-icon-ui { grid-template-rows: 48px 52px minmax(0,1fr); }
+.daw.rr-icon-ui .daw-top { padding: 0 8px; gap: 8px; }
+.daw.rr-icon-ui .top-actions { gap: 2px; }
+.daw.rr-icon-ui .transport { height: 52px; padding: 4px 8px; gap: 8px; }
+.daw.rr-icon-ui .transport-controls { gap: 2px; }
+.daw.rr-icon-ui .transport-tray { top: 52px; }
+.daw.rr-icon-ui #workspace { grid-template-rows: 44px var(--arrange-height) 44px var(--mixer-height) 44px var(--dock-height) var(--dock-grip-height); }
+.daw.rr-icon-ui .workspace-nav { min-height: 44px; padding: 0 6px; }
+.daw.rr-icon-ui .tabs, .daw.rr-icon-ui .view-tools { gap: 2px; }
+.daw.rr-icon-ui .arrange-toolbar { height: 52px; gap: 7px; }
+.daw.rr-icon-ui .timeline-commands { gap: 2px; }
+.daw.rr-icon-ui .channel, .daw.rr-icon-ui .master-channel { flex-basis: 110px; min-width: 110px; }
+.daw.rr-icon-ui .channel-buttons, .daw.rr-icon-ui .channel-bottom { height: 44px; min-height: 44px; }
+.daw.rr-icon-ui .mix-toolbar { height: 48px; min-height: 48px; }
+.daw.rr-icon-ui .dock-header { height: 48px; min-height: 48px; }
+.daw.rr-icon-ui .dock-pane { height: calc(100% - 48px); }
+.daw.rr-icon-ui .clip-tools { flex-wrap: wrap; }
+.daw.rr-icon-ui .fx-card summary { min-height: 48px; }
+.daw.rr-icon-ui.arrangement-focus #workspace { grid-template-rows: 44px max(260px,calc(100dvh - 188px - var(--rr-top))) 0 0 0 44px 0; }
+.daw.rr-icon-ui[data-view=mixer] #workspace { grid-template-rows: 44px 0 0 max(360px,var(--mixer-height)) 44px var(--dock-height) var(--dock-grip-height); }
+.daw.rr-icon-ui[data-view=notes] #workspace, .daw.rr-icon-ui[data-view=versions] #workspace { grid-template-rows: 44px minmax(0,1fr); }
+.daw.rr-icon-ui #notes-view, .daw.rr-icon-ui #versions-view { min-height: calc(100dvh - 144px - var(--rr-top)); }
+@media(max-width:999px) {
+  html[data-record-room="refix"] .daw.rr-icon-ui .sidebar,
+  html[data-record-room="refix"] .daw.rr-icon-ui .library-shade { top: calc(100px + var(--rr-top)); }
+}
+/* Booth: timeline, private takes and publishing retain their original structure. */
+html[data-record-room="booth"] .rr-icon-ui .transport-bar { height: 54px; padding: 4px 8px; gap: 6px; }
+html[data-record-room="booth"] .rr-icon-ui .studio-header { min-height: 48px; height: 48px; }
+html[data-record-room="booth"] .rr-icon-ui.tablet-layout .studio-header { height: 54px; }
+html[data-record-room="booth"] .rr-icon-ui .track-add { display: flex; flex-wrap: wrap; gap: 4px; }
+html[data-record-room="booth"] .rr-icon-ui .transport-bar #record i { display: none; }
+html[data-record-room="booth"] .rr-icon-ui .effect-card h3 { min-height: 48px; }
+html[data-record-room="booth"] .rr-icon-ui #timeline-focus { margin-left: auto; }
+/* Curator keeps song names, artwork, BPM fields and counts in the library. */
+html[data-record-room="curator"] .rr-icon-ui .nav-item { justify-content: center; }
+html[data-record-room="curator"] .rr-icon-ui #desktop-nav { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+html[data-record-room="curator"] .rr-icon-ui .nav-item > .nav-count {
+  display: block !important; position: absolute; right: 1px; top: 1px;
+  padding: 2px 3px; border-radius: 4px; background: #172126;
+  font: 600 9px/1 Inter,system-ui,sans-serif; color: #c5ccca;
+}
+html[data-record-room="curator"] .rr-icon-ui .mobile-nav { justify-content: space-around; }
+html[data-record-room="curator"] .rr-icon-ui .mobile-nav .nav-item { flex: 1; height: 48px; }
+html[data-record-room="curator"] .rr-icon-ui .beat-tools { gap: 3px; }
+html[data-record-room="curator"] .rr-icon-ui .mode-switch { gap: 4px; }
+html[data-record-room="curator"] .rr-icon-ui .tool-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+@media(max-width:600px) {
+  .daw.rr-icon-ui .daw-top { gap: 5px; padding: 0 4px; }
+  .daw.rr-icon-ui .top-actions { gap: 0; }
+  .daw.rr-icon-ui .transport { gap: 4px; padding-inline: 4px; }
+  .daw.rr-icon-ui .time-signature { display: none; }
+  .daw.rr-icon-ui .view-tools { gap: 0; }
+  .daw.rr-icon-ui .workspace-nav { padding-inline: 2px; }
+  html[data-record-room="curator"] .rr-icon-ui .beat-row { gap: 7px; }
+}
+
+body.rr-icon-ui button.rr-icon-button[hidden] { display: none !important; }
+
+.daw.rr-icon-ui .mobile-brand, .daw.rr-icon-ui .new-project { display: none !important; }
+
+/* Reserve the actual 44px playback target; the old phone grid used 34px. */
+html[data-record-room="curator"] .rr-icon-ui .beat-row { grid-template-columns: 44px minmax(0,1fr) auto; column-gap: 12px; }
+html[data-record-room="curator"] .rr-icon-ui .beat-main { overflow-wrap: anywhere; }
+
+
+/* The face is compact; the button itself remains a 44px touch target. */
+body.rr-icon-ui button.rr-icon-button.rr-compact {
+ background: transparent !important; border: 0 !important; box-shadow: none !important;
+ padding: 0 !important; isolation: isolate;
+}
+body.rr-icon-ui button.rr-icon-button.rr-compact::after {
+ content: '' !important; position: absolute; display: block; box-sizing: border-box;
+ width: calc(34px + var(--rr-badge-space,0px)); height: 34px;
+ left: 50%; top: 50%; transform: translate(-50%,-50%);
+ background: var(--rr-face-fill,transparent); border: var(--rr-face-border,0px solid transparent);
+ border-radius: var(--rr-face-radius,0px); pointer-events: none; z-index: -1;
+}
+body.rr-icon-ui button.rr-icon-button.rr-compact::before {
+ position: absolute; left: calc(50% - var(--rr-badge-space,0px) / 2); top: 50%;
+ transform: translate(-50%,-50%); pointer-events: none;
+}
+body.rr-icon-ui button.rr-icon-button.rr-compact > .rr-icon-value {
+ display: block !important; position: absolute; left: calc(50% + 14px - var(--rr-badge-space,0px) / 2);
+ top: 50%; transform: translateY(-50%); pointer-events: none;
+}
+.rr-icon-value::before { content: attr(data-value); font: 600 11px/1 Inter,system-ui,sans-serif; }
+body.rr-icon-ui button.rr-icon-button.rr-compact:is([aria-pressed=true],[aria-selected=true]):not([data-rr-icon^="heart"])::after { box-shadow: inset 0 0 0 1px currentColor; }
+body.rr-icon-ui button.rr-icon-button.rr-compact:focus-visible { outline-offset: -5px; }
+html[data-record-room="curator"] .rr-icon-ui .nav-item > .nav-count { right: auto; left: calc(50% + 5px); top: calc(50% - 19px); }
+/* Selected music rows reach the edges of their content frame. */
+html[data-record-room="curator"] main { --rr-list-gutter: 40px; }
+html[data-record-room="curator"] .track-list { margin-inline: calc(-1 * var(--rr-list-gutter)); }
+html[data-record-room="curator"] .rr-icon-ui .beat-row { padding-left: calc(var(--rr-list-gutter) + 2px); padding-right: calc(var(--rr-list-gutter) + 4px); }
+@media(max-width:1050px) { html[data-record-room="curator"] main { --rr-list-gutter: 24px; } }
+@media(max-width:700px) { html[data-record-room="curator"] main { --rr-list-gutter: 17px; } }
+
+body.rr-icon-ui button.rr-icon-button.rr-compact[data-rr-value]:not([data-rr-value=""]) { min-width: calc(44px + var(--rr-badge-space,0px)) !important; }

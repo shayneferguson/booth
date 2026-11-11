@@ -1,0 +1,6 @@
+#mic-panel { overflow: auto; overscroll-behavior: contain; }
+.mic-panel-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; position: sticky; top: 0; z-index: 1; background: #1b1b1b; padding: 0 0 12px; }
+.mic-panel-heading strong { font-size: 13px; font-weight: 600; }
+#mic-panel-close { min-width: 88px; min-height: 44px; font-size: 13px; touch-action: manipulation; }
+#mic-panel-toggle { touch-action: manipulation; }
+#mic-panel-toggle[aria-expanded=true] { border-color: #ededed; }

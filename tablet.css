@@ -1,0 +1,170 @@
+/* Booth's touch workspace. The existing compact phone layout remains below 700px. */
+.workspace-dock { display: contents; }
+.dock-tabs, .tablet-only { display: none; }
+#take-backdrop { position: fixed; inset: 0; z-index: 34; background: #00000088; border: 0; border-radius: 0; }
+#take-browser-close { margin-left: auto; }
+.browser-heading-row { display: flex; align-items: center; gap: 8px; }
+.browser-heading-row .browser-heading { flex: 1; }
+.track-add { display: grid; grid-template-columns: 1fr 1fr; }
+
+body.tablet-layout {
+  --bg: #121212;
+  --panel: #1a1a1a;
+  --line: #353535;
+  --text: #e6e6e6;
+  --muted: #a6a6a6;
+  --gold: #ededed;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+  font-size: 13px;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+.tablet-layout button, .tablet-layout select { min-height: 44px; font-size: 13px; }
+.tablet-layout input:not([type=range]):not([type=checkbox]), .tablet-layout textarea { font-size: 16px; min-height: 44px; }
+.tablet-layout .studio-header { height: 54px; min-height: 54px; padding: 0 14px; background: #181818; }
+.tablet-layout .brand { font-size: 18px; }
+.tablet-layout .header-song { font-size: 14px; }
+.tablet-layout .help { min-height: 44px; display: flex; align-items: center; font-size: 12px; }
+.tablet-layout #library-toggle { min-width: 44px; }
+.tablet-layout main { flex: 1; min-height: 0; overflow: hidden; }
+.tablet-layout #join { max-height: calc(100dvh - 100px); overflow: auto; margin: 25px auto; }
+.tablet-layout .transport-bar { height: 62px; padding: 8px 12px; gap: 8px; background: #1d1d1d; }
+.tablet-layout .transport-bar > button { min-width: 70px; height: 46px; font-size: 13px; }
+.tablet-layout .transport-bar #record { min-width: 96px; }
+.tablet-layout .transport-clock { margin: 0 9px; gap: 9px; }
+.tablet-layout .transport-clock strong { font-size: 23px; }
+.tablet-layout .transport-clock span { font-size: 12px; }
+.tablet-layout #tempo-label { font-size: 12px; padding: 9px; }
+.tablet-layout #mode { font-size: 11px; }
+.tablet-layout #mic-panel-toggle { font-size: 12px; }
+.tablet-layout #mic-panel { width: 380px; padding: 18px; max-height: calc(100dvh - 150px); overflow: auto; }
+.tablet-layout #mic-panel p { font-size: 13px; }
+.tablet-layout #mic-panel .pill, .tablet-layout #peak { font-size: 11px; }
+.tablet-layout .playlist-bar { min-height: 54px; padding: 5px 12px; background: #1a1a1a; }
+.tablet-layout .playlist-heading { flex: 0 1 225px; font-size: 11px; }
+.tablet-layout .song-navigation select { min-height: 44px; font-size: 14px; }
+.tablet-layout .song-navigation button { min-height: 44px; min-width: 44px; font-size: 24px; }
+.tablet-layout .studio-shell { grid-template-columns: minmax(0,1fr); }
+.tablet-layout .workspace,
+.tablet-layout.has-playlist .workspace {
+  grid-template-rows: minmax(265px,1fr) 292px;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+.tablet-layout .workspace-dock { display: flex; flex-direction: column; min-width: 0; min-height: 0; background: #171717; border-top: 2px solid #727272; }
+.tablet-layout .dock-tabs { display: flex; flex: none; gap: 3px; min-height: 46px; padding: 0 9px; background: #1a1a1a; border-bottom: 1px solid var(--line); }
+.tablet-layout .dock-tabs button { border: 0; border-radius: 0; background: none; min-width: 105px; padding: 8px 16px; color: #a6a6a6; }
+.tablet-layout .dock-tabs button[aria-selected=true] { color: #ededed; box-shadow: inset 0 -3px #ededed; background: #212121; }
+.tablet-layout .dock-hint { margin-left: auto; align-self: center; font-size: 10px; color: #a0a0a0; }
+.tablet-layout .dock-tabs #timeline-focus { margin-left: auto; min-width: 110px; font-size: 12px; }
+.tablet-layout .workspace-dock > section { flex: 1; min-height: 0; overflow: hidden; }
+.tablet-layout .mixer-panel { border: 0; }
+.tablet-layout .panel-bar { height: 31px; min-height: 31px; font-size: 11px; padding: 3px 12px; background: #202020; }
+.tablet-layout .panel-bar > span:first-child, .tablet-layout .panel-bar > strong, .tablet-layout #selected-label { font-size: 11px; }
+.tablet-layout .panel-bar .subtle { font-size: 10px; }
+.tablet-layout .channel-strips { height: calc(100% - 31px); grid-template-columns: repeat(3,minmax(0,1fr)); }
+.tablet-layout .channel-strip { grid-template-columns: 76px minmax(0,1fr); grid-template-rows: 29px minmax(0,1fr) 48px; background: #1c1c1c; }
+.tablet-layout .strip-head { padding: 4px 9px; font-size: 12px; }
+.tablet-layout .strip-head small { display: none; }
+.tablet-layout .strip-fader { padding: 8px 5px 4px; gap: 5px; }
+.tablet-layout .strip-fader input { width: 44px; min-width: 44px; }
+.tablet-layout .strip-scale { font-size: 9px; }
+.tablet-layout .strip-settings { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); align-content: start; padding: 6px 8px; gap: 6px; }
+.tablet-layout .strip-value { font-size: 19px; }
+.tablet-layout .strip-meter-value { font-size: 10px; justify-self: end; align-self: center; }
+.tablet-layout .strip-note { font-size: 10px; line-height: 1.4; }
+.tablet-layout .strip-note, .tablet-layout [data-strip=master] .strip-settings label { grid-column: 1 / -1; }
+.tablet-layout .strip-settings label { font-size: 10px; }
+.tablet-layout .strip-settings input { min-height: 36px; height: 36px; }
+.tablet-layout .strip-settings select { font-size: 12px; min-height: 44px; padding: 4px; margin-top: 4px; }
+.tablet-layout .strip-buttons { padding: 2px 6px; gap: 7px; }
+.tablet-layout .strip-buttons button { min-width: 52px; min-height: 44px; height: 44px; font-size: 12px; }
+.tablet-layout .effects-panel > .panel-bar { height: 53px; min-height: 53px; gap: 8px; }
+.tablet-layout .panel-bar > select, .tablet-layout .panel-bar > button { min-height: 44px; height: 44px; font-size: 12px; }
+.tablet-layout .panel-bar > select { max-width: 220px; }
+.tablet-layout #fx-status { font-size: 10px; }
+.tablet-layout .effect-rack { height: calc(100% - 53px); padding: 8px; gap: 8px; }
+.tablet-layout .effect-card { flex: 0 0 280px; min-width: 280px; background: #1f1f1f; }
+.tablet-layout .effect-card h3 { min-height: 46px; font-size: 13px; padding: 0 8px; background: #292929; }
+.tablet-layout .effect-card h3 button { min-height: 44px; height: 44px; font-size: 12px; }
+.tablet-layout .effect-param { min-height: 44px; grid-template-columns: 76px minmax(60px,1fr) 42px; font-size: 12px; }
+.tablet-layout .effect-param input { height: 44px; min-height: 44px; touch-action: pan-y; }
+.tablet-layout .effect-param output { font-size: 10px; }
+.tablet-layout .effect-tools button { min-height: 44px; font-size: 12px; }
+.tablet-layout .add-effect { justify-content: flex-start; padding-top: 18px; font-size: 12px; }
+.tablet-layout .vocal-toolbar, .tablet-layout .section-tools { min-height: 55px; padding: 5px 9px; gap: 8px; background: #1d1d1d; }
+.tablet-layout .vocal-toolbar label, .tablet-layout .section-tools label { font-size: 12px; gap: 6px; }
+.tablet-layout .vocal-toolbar select, .tablet-layout .section-tools select { min-height: 44px; font-size: 13px; }
+.tablet-layout .vocal-toolbar #arm-track { width: 125px; }
+.tablet-layout .section-tools button { min-width: 44px; min-height: 44px; font-size: 12px; padding: 5px 9px; }
+.tablet-layout .section-tools input[type=number] { width: 72px; font-size: 16px; min-height: 44px; }
+.tablet-layout .section-tools label:first-child select { width: 148px; max-width: 148px; }
+.tablet-layout .section-tools .check { min-height: 44px; }
+.tablet-layout .cue-strip { min-height: 34px; font-size: 11px; padding: 5px 10px; gap: 10px; }
+.tablet-layout .cue-strip > span:last-child { display: none; }
+.tablet-layout #sections-ruler { height: 32px; }
+.tablet-layout #sections-ruler button { height: 31px; min-height: 31px; font-size: 11px; }
+.tablet-layout #time-ruler { height: 30px; }
+.tablet-layout #time-ruler span { font-size: 10px; padding-top: 3px; }
+.tablet-layout #record-range { top: 62px; }
+.tablet-layout #timeline-cursor { top: 32px; }
+.tablet-layout .timeline-lane { height: 76px; }
+.tablet-layout .timeline-lane.guide { height: 38px; }
+.tablet-layout .timeline-lane .lane-title { font-size: 11px; padding: 2px 8px; }
+.tablet-layout .clip strong { font-size: 10px; }
+.tablet-layout .clip canvas { top: 21px; height: calc(100% - 21px); }
+.tablet-layout .take-browser { display: none; position: fixed; top: var(--drawer-top,116px); bottom: env(safe-area-inset-bottom); width: 310px; left: env(safe-area-inset-left); z-index: 35; padding: 10px; gap: 8px; background: #181818; }
+.tablet-layout.browser-open .take-browser { display: flex; }
+.tablet-layout .tablet-only { display: block; }
+.tablet-layout .take-browser .browser-heading strong { font-size: 14px; }
+.tablet-layout .take-browser .eyebrow { font-size: 10px; }
+.tablet-layout .take-browser .check, .tablet-layout .track-name { font-size: 12px; }
+.tablet-layout .vocal-track button:not(.track-pick) { min-width: 44px; padding: 4px; }
+.tablet-layout .vocal-track .track-pick { font-size: 13px; }
+.tablet-layout #layer-status { font-size: 11px; }
+.tablet-layout .take { padding: 10px; }
+.tablet-layout .take-select { min-height: 44px; font-size: 12px; }
+.tablet-layout .take-head input { font-size: 16px; }
+.tablet-layout .take-actions button, .tablet-layout .take-bottom > button { min-height: 44px; font-size: 12px; }
+.tablet-layout .take-meta, .tablet-layout .take .muted, .tablet-layout .take-shift, .tablet-layout .take-bottom a, .tablet-layout .take-bottom .delete { font-size: 11px; }
+.tablet-layout .take-bottom a { min-height: 44px; display: flex; align-items: center; }
+.tablet-layout .star { min-width: 44px; min-height: 44px; }
+.tablet-layout .take-shift input { min-height: 44px; }
+.tablet-layout .browser-foot { font-size: 10px; }
+.tablet-layout #lyrics-panel { padding: 14px 18px; overflow: auto; }
+.tablet-layout .lyrics-heading { display: flex; align-items: baseline; gap: 20px; margin-bottom: 10px; }
+.tablet-layout .lyrics-heading strong { font-size: 14px; font-weight: 600; }
+.tablet-layout .lyrics-heading span { font-size: 11px; color: var(--muted); }
+.tablet-layout #lyrics-slot { height: calc(100% - 32px); min-height: 110px; }
+.tablet-layout #lyrics-slot .lyrics { height: 100%; border: 0; margin: 0; padding: 0; }
+.tablet-layout #lyrics-slot summary { display: none; }
+.tablet-layout #lyrics { height: 100%; min-height: 110px; margin: 0; resize: none; font-size: 19px; line-height: 1.7; padding: 14px 18px; }
+.tablet-layout #message { font-size: 13px; bottom: max(15px, env(safe-area-inset-bottom)); }
+.tablet-layout dialog { max-width: 500px; }
+.tablet-layout dialog p { font-size: 15px; }
+.tablet-wide .studio-shell { grid-template-columns: 244px minmax(0,1fr); }
+.tablet-wide .take-browser { display: flex; position: static; width: auto; box-shadow: none; min-height: 0; }
+.tablet-wide.browser-collapsed .studio-shell { grid-template-columns: minmax(0,1fr); }
+.tablet-wide.browser-collapsed .take-browser { display: none; }
+@media (min-width:700px) and (max-width:999px) {
+  .tablet-layout .workspace, .tablet-layout.has-playlist .workspace { grid-template-rows: minmax(340px,1fr) 360px; }
+  .tablet-layout .transport-clock { flex-direction: column; gap: 0; }
+  .tablet-layout #mode { display: none; }
+  .tablet-layout .playlist-heading { flex-basis: 200px; }
+  .tablet-layout .channel-strip { grid-template-columns: 85px minmax(0,1fr); }
+  .tablet-layout .strip-settings { gap: 7px; padding-top: 10px; }
+  .tablet-layout .strip-settings input { height: 44px; min-height: 44px; }
+  .tablet-layout .effect-card { flex-basis: 300px; min-width: 300px; }
+  .tablet-layout .dock-hint { display: none; }
+}
+@media (min-width:1200px) and (min-height:850px) {
+  .tablet-layout .workspace, .tablet-layout.has-playlist .workspace { grid-template-rows: minmax(340px,1fr) 355px; }
+  .tablet-wide .studio-shell { grid-template-columns: 270px minmax(0,1fr); }
+}
+@media (min-width:700px) and (max-height:600px) {
+  .tablet-layout .workspace, .tablet-layout.has-playlist .workspace { grid-template-rows: 330px 320px; }
+}
+.tablet-layout.timeline-focused .workspace,
+.tablet-layout.timeline-focused.has-playlist .workspace { grid-template-rows: minmax(300px,1fr) 46px; }
+.tablet-layout.timeline-focused .workspace-dock > section { display: none; }

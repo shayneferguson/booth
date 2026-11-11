@@ -1,0 +1,17 @@
+/* The Record Room: keep controls clear of system chrome, including Home Screen blur. */
+:root {
+  --rr-safe-top: env(safe-area-inset-top, 0px);
+  --rr-top-clearance: 0px;
+  --rr-top: max(var(--rr-safe-top), var(--rr-top-clearance));
+}
+html.rr-apple-home-screen { --rr-top-clearance: 24px; }
+html[data-record-room] { background: var(--rr-chrome); }
+html[data-record-room] body { box-sizing: border-box; padding-top: var(--rr-top); }
+/* Scrolled content must never show through the reserved status area. */
+html[data-record-room] body::before {
+  content: ''; position: fixed; inset: 0 0 auto; height: var(--rr-top);
+  background: var(--rr-chrome); z-index: 1000; pointer-events: none;
+}
+html[data-record-room="booth"] { --rr-chrome: #181818; }
+html[data-record-room="booth"] .studio-header { background: #181818; }
+html[data-record-room="booth"] #join { max-height: calc(100dvh - 100px - var(--rr-top)); }

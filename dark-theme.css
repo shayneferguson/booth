@@ -1,0 +1,18 @@
+/* Curator palette shared by the Record Room DAWs. Track colours and signal meters remain semantic. */
+:root,body,.daw {color-scheme:dark;--bg:#000;--surface:#0d0d0d;--panel:#0d0d0d;--soft:#191919;--line:#292929;--text:#f3f3f3;--muted:#a3a3a3;--gold:#ededed;--accent:#ededed;}
+html,body {background:#000!important;}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible {outline-color:#ededed;}
+input[type=range],input[type=checkbox] {accent-color:#ededed;}
+
+body .studio-header,body .transport-bar,body .playlist-bar {background:#0d0d0d!important;border-color:#292929;}
+body .workspace,body .workspace-pane,body #timeline-scroll,body #timeline {background-color:#080808!important;}
+body .timeline-lane {border-color:#292929;}
+body .scrollable-workspace,body .workspace-dock {background:#080808!important;}
+body .channel-strip {background:#111!important;}
+body .dock-tabs,body.scrollable-workspace .workspace-pane>.dock-tabs {background:#0d0d0d!important;border-color:#292929;}
+body .booth-track-header {background:#191919!important;border-color:#353535;color:#ededed;}
+body .booth-track-header.selected {background:#29252d!important;}
+body #workspace-scrollbar {background:#080808!important;border-color:#292929;}
+body .workspace-scroll-thumb {background:#3b3b3b!important;border-color:#6b6b6b;}
+
+body .channel-strip .strip-fader,body .channel-strip .strip-settings {background-color:#111!important;}

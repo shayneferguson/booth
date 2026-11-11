@@ -1,0 +1,16 @@
+/* Same page-zoom policy as reFIX; explicit drag targets retain touch-action:none. */
+:where(html,body,body *){touch-action:pan-x pan-y}
+.booth-touch-layout .booth-timeline-area{display:flex;flex:1;min-height:0;min-width:0;overflow:hidden}
+.booth-touch-layout .booth-timeline-area .timeline-scroll{flex:1;width:0;min-width:0}
+.booth-track-headers{flex:0 0 130px;width:130px;overflow:auto;scrollbar-width:none;background:#1b1b1b;border-left:1px solid #686868}
+.booth-track-headers::-webkit-scrollbar{display:none}
+.booth-header-spacer{height:50px;display:flex;align-items:center;padding:8px;font-size:9px;letter-spacing:.06em;color:#b2b2b2}
+.tablet-layout .booth-header-spacer{height:62px}
+.booth-touch-layout .booth-track-header{position:relative;display:flex;align-items:center;text-align:left;width:100%;min-height:0;padding:7px 20px 7px 8px;border:0;border-bottom:1px solid #71717166;border-radius:0;background:#313131;color:#e6e6e6;font:500 11px/1.4 Inter,sans-serif;overflow:hidden}
+.booth-touch-layout .booth-track-header>span:first-child{overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+.booth-touch-layout .booth-track-header.vocal{background:#50465c}
+.booth-touch-layout .booth-track-header.selected{background:#675977;box-shadow:inset 3px 0 #bbbbbb}
+.booth-touch-layout .booth-track-header.recording{background:#744d49}
+.booth-touch-layout .track-height-indicator{position:absolute;right:7px;top:7px;font-size:15px;color:#ededed}
+.booth-touch-layout #timeline-cursor{left:0;will-change:transform}
+@media(max-width:600px){.booth-track-headers{flex-basis:92px;width:92px}.booth-touch-layout .booth-track-header{font-size:10px;padding-left:6px}}
