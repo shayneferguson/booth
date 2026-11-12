@@ -29,3 +29,6 @@
 .booth-drawer-controls button{min-width:44px;min-height:36px;flex:1;padding:4px;font-size:11px}
 .drawer-open .booth-track-header.vocal{align-items:flex-start;padding-top:5px;padding-bottom:42px}
 @media(prefers-reduced-motion:reduce){.booth-touch-layout .booth-track-headers{transition:none}}
+
+/* Larger default backing and vocal lanes; explicit expanded height stays available. */
+.booth-touch-layout #timeline-lanes .timeline-lane:not(.guide){height:112px}
