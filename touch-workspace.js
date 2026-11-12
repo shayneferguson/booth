@@ -65,7 +65,7 @@ export function beginDrag(element,event,move,finish=()=>{}){
 }
 export class TrackHeaders {
  constructor(workspace){
-  this.workspace=workspace;this.expanded=new Map();this.scroll=document.getElementById('timeline-scroll');
+  this.workspace=workspace;this.drawerOpen=false;this.expanded=new Map();this.scroll=document.getElementById('timeline-scroll');
   const area=document.createElement('div');area.className='booth-timeline-area';this.scroll.before(area);area.append(this.scroll);
   this.rail=document.createElement('div');this.rail.className='booth-track-headers';this.rail.setAttribute('aria-label','Timeline track headers');area.append(this.rail);
   this.scroll.addEventListener('scroll',()=>{if(this.rail.scrollTop!==this.scroll.scrollTop)this.rail.scrollTop=this.scroll.scrollTop;},{passive:true});
@@ -78,12 +78,12 @@ export class TrackHeaders {
   for(const row of rows){const key=row.dataset.laneKey,open=!!this.expanded.get(key);row.style.height=open?'148px':'';const button=[...this.rail.querySelectorAll('.booth-track-header')].find(b=>b.dataset.track===key);if(!button)continue;button.style.height=row.getBoundingClientRect().height+'px';button.setAttribute('aria-expanded',String(open));button.querySelector('.track-height-indicator').textContent=open?'⌄':'›';}
  }
  render(){
-  const top=this.rail.scrollTop;this.rail.replaceChildren();const spacer=document.createElement('div');spacer.className='booth-header-spacer';spacer.textContent='TRACKS';this.rail.append(spacer);
+  const top=this.rail.scrollTop;this.rail.replaceChildren();const spacer=document.createElement('div');spacer.className='booth-header-spacer';const toggle=document.createElement('button');toggle.type='button';toggle.textContent=this.drawerOpen?'›':'‹';toggle.setAttribute('aria-label',this.drawerOpen?'Close track controls':'Open track controls');toggle.setAttribute('aria-expanded',String(this.drawerOpen));toggle.onclick=()=>{this.drawerOpen=!this.drawerOpen;this.render();};spacer.append(toggle);this.rail.classList.toggle('drawer-open',this.drawerOpen);this.rail.append(spacer);
   for(const row of document.querySelectorAll('#timeline-lanes .timeline-lane')){
    const key=row.dataset.laneKey,button=document.createElement('button');button.type='button';button.className='booth-track-header';button.dataset.track=key;button.classList.toggle('vocal',key.startsWith('vocal:'));button.classList.toggle('selected',row.classList.contains('layer-selected'));button.classList.toggle('recording',row.classList.contains('active-record'));
    const name=document.createElement('span');name.textContent=row.querySelector('.lane-title').textContent;const icon=document.createElement('span');icon.className='track-height-indicator';button.append(name,icon);button.title='Double-tap to expand or collapse track. Arrow Right/Left also resize.';button.setAttribute('aria-label',name.textContent+' track height');
-   button.onclick=()=>{const c=this.workspace.c;if(key.startsWith('vocal:')&&!c.recording()&&!c.publishing()&&c.layer()?.id!==key.slice(6))c.selectLayer(key.slice(6));};
-   button.onkeydown=e=>{if(!['ArrowRight','ArrowLeft'].includes(e.key))return;e.preventDefault();this.expand(key,e.key==='ArrowRight');};this.rail.append(button);
+   button.onclick=()=>{this.drawerOpen=true;this.rail.classList.add('drawer-open');const c=this.workspace.c;if(key.startsWith('vocal:')&&!c.recording()&&!c.publishing()&&c.layer()?.id!==key.slice(6))c.selectLayer(key.slice(6));this.render();};
+   button.onkeydown=e=>{if(!['ArrowRight','ArrowLeft'].includes(e.key))return;e.preventDefault();this.expand(key,e.key==='ArrowRight');};const wrap=document.createElement('div');wrap.className='booth-track-drawer-row';wrap.append(button);button.dataset.short=key.startsWith('vocal:')?String([...document.querySelectorAll('#timeline-lanes .timeline-lane')].filter(r=>r.dataset.laneKey.startsWith('vocal:')).indexOf(row)+1):'B';if(key.startsWith('vocal:')){const layer=this.workspace.c.layers().find(l=>l.id===key.slice(6));const controls=document.createElement('div');controls.className='booth-drawer-controls';for(const [field,label] of [['mute','Mute'],['solo','Solo']]){const control=document.createElement('button');control.type='button';control.textContent=label;control.setAttribute('aria-label',label+' '+name.textContent);control.setAttribute('aria-pressed',String(!!layer?.[field]));control.onclick=()=>{this.workspace.c.toggleLayer(key.slice(6),field);this.render();};controls.append(control);}wrap.append(controls);}this.rail.append(wrap);
   }
   const foot=document.createElement('div');foot.style.height='20px';this.rail.append(foot);this.refreshHeights();this.rail.scrollTop=top;
  }

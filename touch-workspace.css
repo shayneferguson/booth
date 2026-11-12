@@ -14,3 +14,18 @@
 .booth-touch-layout .track-height-indicator{position:absolute;right:7px;top:7px;font-size:15px;color:#ededed}
 .booth-touch-layout #timeline-cursor{left:0;will-change:transform}
 @media(max-width:600px){.booth-track-headers{flex-basis:92px;width:92px}.booth-touch-layout .booth-track-header{font-size:10px;padding-left:6px}}
+
+/* Compact rail opens into track controls without permanent portrait width. */
+.booth-touch-layout .booth-track-headers{flex-basis:44px;width:44px;transition:width .18s ease,flex-basis .18s ease}
+.booth-touch-layout .booth-track-headers.drawer-open{flex-basis:164px;width:164px}
+.booth-header-spacer{padding:0!important;justify-content:center}
+.booth-header-spacer button{min-width:44px;min-height:44px;background:transparent;border:0;color:inherit;font-size:22px}
+.booth-track-drawer-row{position:relative}
+.booth-track-headers:not(.drawer-open) .booth-track-header>span{display:none!important}
+.booth-track-headers:not(.drawer-open) .booth-track-header{padding:0;justify-content:center}
+.booth-track-headers:not(.drawer-open) .booth-track-header:after{content:attr(data-short);font-size:12px;font-weight:600}
+.booth-drawer-controls{display:none;position:absolute;bottom:3px;left:5px;right:5px;gap:4px}
+.drawer-open .booth-drawer-controls{display:flex}
+.booth-drawer-controls button{min-width:44px;min-height:36px;flex:1;padding:4px;font-size:11px}
+.drawer-open .booth-track-header.vocal{align-items:flex-start;padding-top:5px;padding-bottom:42px}
+@media(prefers-reduced-motion:reduce){.booth-touch-layout .booth-track-headers{transition:none}}
