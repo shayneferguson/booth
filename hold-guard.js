@@ -1,0 +1,1 @@
+(()=>{const editable=t=>t instanceof Element&&!!t.closest('input,textarea,[contenteditable]:not([contenteditable="false"])');for(const name of ['selectstart','contextmenu'])document.addEventListener(name,e=>{if(!editable(e.target))e.preventDefault();},{capture:true});})();

@@ -1,0 +1,3 @@
+/* Record Room: holds operate controls, not browser text selection. */
+html body,html body *{-webkit-user-select:none!important;user-select:none!important;-webkit-touch-callout:none!important}
+html body input,html body textarea,html body [contenteditable]:not([contenteditable="false"]),html body [contenteditable]:not([contenteditable="false"]) *{-webkit-user-select:text!important;user-select:text!important;-webkit-touch-callout:default!important}
