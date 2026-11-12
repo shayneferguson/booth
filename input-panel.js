@@ -7,6 +7,7 @@ export class InputPanel {
     this.toggle.onclick = () => this.setOpen(this.panel.hidden);
     this.close.onclick = () => this.setOpen(false, true);
     const dismissOutside = event => {
+      if (document.getElementById('record-setup')?.open) return;
       if (!this.panel.hidden && !this.panel.contains(event.target) && !this.toggle.contains(event.target)) {
         this.setOpen(false);
       }
