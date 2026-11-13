@@ -1,0 +1,36 @@
+/* Rhythm Research · shared interface palette · 2026-11-13 */
+:root,html,body,.daw{color-scheme:dark;--rr-lime:#c5f354;--rr-black:#080a09;--rr-charcoal:#171c1a;--rr-raised:#202623;--rr-border:#364039;--rr-white:#f5f7f4;--rr-muted:#a9b1ac;--bg:var(--rr-black);--surface:var(--rr-charcoal);--panel:var(--rr-charcoal);--soft:var(--rr-raised);--line:var(--rr-border);--text:var(--rr-white);--muted:var(--rr-muted);--accent:var(--rr-lime);--gold:var(--rr-lime);--green:var(--rr-lime)}
+html,body{background:var(--rr-black)!important;color:var(--rr-white)}
+::selection{background:var(--rr-lime);color:var(--rr-black)}
+button,input,select,textarea{font-family:inherit}
+button,input,select,textarea,dialog,.panel,.sample{border-color:var(--rr-border)}
+input,select,textarea,dialog{background-color:var(--rr-charcoal);color:var(--rr-white)}
+input[type=range],input[type=checkbox],input[type=radio]{accent-color:var(--rr-lime)}
+:where(button,a,input,select,textarea):focus-visible{outline:2px solid var(--rr-lime)!important;outline-offset:3px}
+button:hover:not(:disabled),.button:hover{border-color:var(--rr-lime)}
+button.primary,.button.primary,.new-project,.commit-button{background:var(--rr-lime);border-color:var(--rr-lime);color:var(--rr-black);font-weight:650}
+button.primary[data-icon]:before{background:var(--rr-lime);border-color:var(--rr-lime)}
+button.primary[data-icon] img{filter:brightness(0)}
+button.active,button[aria-pressed=true]:not(#record):not(#mic):not(.record):not(.mute):not(.solo),[role=tab][aria-selected=true]{background-color:#2b3822;border-color:var(--rr-lime);color:var(--rr-lime)}
+button[data-icon][aria-pressed=true]:not(#record):not(#mic):before{background:#344624;border-color:var(--rr-lime)}
+.tabs [aria-selected=true],.view-tabs [aria-pressed=true]{box-shadow:inset 0 -2px var(--rr-lime)}
+.eyebrow,.side-label,.badge,.position,.transport-position,.brand-mark{color:var(--rr-lime)}
+.brand,.identity,.daw-brand,.sampler-identity{color:var(--rr-white)}
+.brand small,.identity span,.muted,.quiet-note{color:var(--rr-muted)}
+header,.topbar,.studio-header,.daw-top,.transport,.transport-bar,.playlist-bar,.dock-tabs,.sidebar,.daw-library{background-color:var(--rr-charcoal)!important;border-color:var(--rr-border)!important}
+.panel,.sample,.channel,.channel-strip,.player,.booth-track-header{background-color:var(--rr-charcoal)!important;border-color:var(--rr-border)!important}
+.workspace,.workspace-pane,.daw-main,.arrange-panel,.scrollable-workspace,.workspace-dock,body #timeline-scroll,body #timeline{background-color:var(--rr-black)!important}
+body .channel-strip .strip-fader,body .channel-strip .strip-settings{background-color:var(--rr-charcoal)!important}
+.sample.active,body .booth-track-header.selected{background-color:#26331f!important;border-color:var(--rr-lime)!important}
+a{color:var(--rr-lime)}
+nav [aria-current]{border-color:var(--rr-lime)}
+nav a:hover,.side-bottom a:hover{color:var(--rr-white)}
+.player{border-top-color:var(--rr-border)}
+/* Record, clipping, mute and solo retain their explicit signal/status colours. */
+#record[aria-pressed=true]:before,#mic[aria-pressed=true]:before{background:#8b3030;border-color:#e97777}
+/* Compact icon faces use saved CSS variables; theme them explicitly. */
+body.rr-icon-ui button.primary,body.rr-icon-ui .button.primary,body.rr-icon-ui .transport #play{color:var(--rr-black)!important;--rr-face-fill:var(--rr-lime)!important;--rr-face-border:1px solid var(--rr-lime)!important}
+body.rr-icon-ui button.rr-compact:is(.active,[aria-selected=true],[aria-pressed=true]):not(#record):not(#mic):not(.mute):not(.solo){color:var(--rr-lime);--rr-face-fill:#2b3822!important;--rr-face-border:1px solid var(--rr-lime)!important}
+.pad.empty{background:var(--rr-charcoal)!important;border-color:var(--rr-border)!important;color:var(--rr-muted)!important}
+.pad.empty .pad-index,.pad.empty .number{color:var(--rr-muted)!important}
+.pad.selected{border-color:var(--rr-lime)!important;box-shadow:inset 3px 0 var(--rr-lime)}
