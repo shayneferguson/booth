@@ -31,6 +31,6 @@ nav a:hover,.side-bottom a:hover{color:var(--rr-white)}
 /* Compact icon faces use saved CSS variables; theme them explicitly. */
 body.rr-icon-ui button.primary,body.rr-icon-ui .button.primary,body.rr-icon-ui .transport #play{color:var(--rr-black)!important;--rr-face-fill:var(--rr-lime)!important;--rr-face-border:1px solid var(--rr-lime)!important}
 body.rr-icon-ui button.rr-compact:is(.active,[aria-selected=true],[aria-pressed=true]):not(#record):not(#mic):not(.mute):not(.solo){color:var(--rr-lime);--rr-face-fill:#2b3822!important;--rr-face-border:1px solid var(--rr-lime)!important}
-.pad.empty{background:var(--rr-charcoal)!important;border-color:var(--rr-border)!important;color:var(--rr-muted)!important}
-.pad.empty .pad-index,.pad.empty .number{color:var(--rr-muted)!important}
+.pad:not(.loaded){background:var(--rr-charcoal)!important;border-color:var(--rr-border)!important;color:var(--rr-muted)!important}
+.pad:not(.loaded) .pad-index,.pad:not(.loaded) .number{color:var(--rr-muted)!important}
 .pad.selected{border-color:var(--rr-lime)!important;box-shadow:inset 3px 0 var(--rr-lime)}
