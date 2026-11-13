@@ -47,14 +47,14 @@
   add('play','Play|Play song|Play / pause mix|With beat|Play previews|Play picks|Play shortlist|Play queue|Sampler|Preview|Hear section');
   add('pause','Pause|Pause song'); add('stop','Stop|Stop pads|Stop recording|Stop take');
   add('circle','Record|Record take|New take on this track');
-  add('save','Save|Save to SoundCraft|Save version|Save a version|Create SoundCraft version|Keep this draft');
+  add('save','Save|Save to Studio|Save version|Save a version|Create Studio version|Keep this draft');
   add('download','Export|Export audio|Render export|Export playlist|Export notes|Export all notes TXT|Back up curation JSON');
   add('upload','Import audio|Import from Files / LaCie|Publish|Publish take|Publish vocal track|Prepare invitation|Create artist playlist|Create playlist');
   add('folder-open','Open|Open session|Open a session|Resume mix|Load mix|Load saved mix|Load sample|Browse LaCie|Load this window');
-  add('equalizer','Mixer|Master|Open in reFIX|reFIX');
+  add('equalizer','Mixer|Master|Open in Mix|Mix');
   add('waveform','Studio|Arrangement|Timeline|Full beat|Crossfade selection|Use selected clip|Sample tools|Select vocal / FX|Consolidate track clips');
   add('sparkles','FX|Vocal FX|Channel & FX|Add effect|Shared reverb');
-  add('settings','Studio tools|Clip|Clip details|Input / Count-in|Manage tracks|Tracks');
+  add('settings','Mix tools|Clip|Clip details|Input / Count-in|Manage tracks|Tracks');
   add('grid','Touch sampler / chopper');
   add('keyframes','Automation|Record moves|Record automation|Add lane|Read');
   add('note-edit','Notes|Lyrics|Export notes|Curate current beat');

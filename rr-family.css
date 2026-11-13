@@ -1,0 +1,6 @@
+/* Rhythm Research family — 2026-11-13. Layout and functional colours retained. */
+:root{--rr-brand-lime:#c5f354;--rr-brand-charcoal:#171c1a}
+.curator-logo,.refix-logo,.brand>img,.daw-brand>.refix-logo,.sampler-identity>.refix-logo,.guide-brand>.refix-logo{object-fit:contain;aspect-ratio:1;filter:none;opacity:1}
+.brand>.refix-logo{width:36px;height:36px}.daw-brand>.refix-logo{width:30px;height:30px}.sampler-identity>.refix-logo{width:40px;height:40px}.guide-brand>.refix-logo{width:36px;height:36px}
+.studio-header .brand img{width:30px;height:30px}header .identity img{width:30px;height:30px}
+@media(max-width:700px){.daw-brand>.refix-logo{width:26px;height:26px}.studio-header .brand img{width:26px;height:26px}.sampler-identity>.refix-logo{width:32px;height:32px}}

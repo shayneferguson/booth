@@ -61,7 +61,7 @@ html[data-record-room="booth"] .rr-icon-ui .track-add { display: flex; flex-wrap
 html[data-record-room="booth"] .rr-icon-ui .transport-bar #record i { display: none; }
 html[data-record-room="booth"] .rr-icon-ui .effect-card h3 { min-height: 48px; }
 html[data-record-room="booth"] .rr-icon-ui #timeline-focus { margin-left: auto; }
-/* Curator keeps song names, artwork, BPM fields and counts in the library. */
+/* Crate keeps song names, artwork, BPM fields and counts in the library. */
 html[data-record-room="curator"] .rr-icon-ui .nav-item { justify-content: center; }
 html[data-record-room="curator"] .rr-icon-ui #desktop-nav { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
 html[data-record-room="curator"] .rr-icon-ui .nav-item > .nav-count {

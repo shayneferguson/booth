@@ -1,4 +1,4 @@
-/* Curator palette shared by the Record Room DAWs. Track colours and signal meters remain semantic. */
+/* Crate palette shared by the Record Room DAWs. Track colours and signal meters remain semantic. */
 :root,body,.daw {color-scheme:dark;--bg:#000;--surface:#0d0d0d;--panel:#0d0d0d;--soft:#191919;--line:#292929;--text:#f3f3f3;--muted:#a3a3a3;--gold:#ededed;--accent:#ededed;}
 html,body {background:#000!important;}
 button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible {outline-color:#ededed;}
